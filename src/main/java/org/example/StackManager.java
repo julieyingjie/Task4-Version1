@@ -16,11 +16,7 @@ public class StackManager {
     static Semaphore sem = new Semaphore(1);
     // Semaphores For Task 4
 
-
-    // mutex_P is for Producer could start firstly
-    private static Semaphore mutex_P = new Semaphore(1);
-
-    // mutex_C is for control the Consumer
+    // mutex_C is for control the Consumer couldn't execute before the producer release the mutex_C
     private static Semaphore mutex_C = new Semaphore(0);
 
     // mutex is for lock when 1 thread is changing the number of the producer or consumer
@@ -28,9 +24,6 @@ public class StackManager {
 
     // counter_P is for track the producer number
     private static int counter_P = 0;
-
-    // counter_C is for track the consumer number
-    private static int counter_C = 0;
 
     // The main()
     public static void main(String[] argv) {
